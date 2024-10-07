@@ -1,0 +1,19 @@
+name:  Local Windows
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+
+      # Add your custom build steps here
+      - name: Run Node.js build
+        run: |
+          # npm install
+          # npm run build
+          echo "Run OK"
