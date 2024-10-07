@@ -10,14 +10,11 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
-      - name: powershell allow...
-        # shell: cmd
-        run: ls
-      # - name: check powershell version
-      #   run: $host.Version      
-      # # Add your custom build steps here
-      # - name: Run Node.js build
-      #   run: |
-      #     # npm install
-      #     # npm run build
-      #     echo "Run OK"
+      - name: Docker build and push
+        run: |
+          docker login -u alanduarte -p DOCKER_KEY
+          docker build -t alanduarte/simple-api-rest:tagname .
+          docker push alanduarte/simple-api-rest:tagname
+
+      - name: Helm apply
+        run: helm upgrade --install nodejs-app ./simple-api-rest/ --namespace develop
