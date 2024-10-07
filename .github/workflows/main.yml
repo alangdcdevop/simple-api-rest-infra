@@ -11,13 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: powershell allow...
-        shell: cmd
-        run: powershell -Command "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser"
-      - name: check powershell version
-        run: $host.Version      
-      # Add your custom build steps here
-      - name: Run Node.js build
-        run: |
-          # npm install
-          # npm run build
-          echo "Run OK"
+        # shell: cmd
+        run: ls
+      # - name: check powershell version
+      #   run: $host.Version      
+      # # Add your custom build steps here
+      # - name: Run Node.js build
+      #   run: |
+      #     # npm install
+      #     # npm run build
+      #     echo "Run OK"
