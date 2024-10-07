@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS simple_api_db;
+USE simple_api_db;
+
+CREATE TABLE IF NOT EXISTS users (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
