@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Docker build and push
         run: |
-          docker login -u alanduarte -p DOCKER_KEY
+          docker login -u alanduarte -p ${{ secrets.DOCKER_KEY }}
           docker build -t alanduarte/simple-api-rest:tagname .
           docker push alanduarte/simple-api-rest:tagname
 
